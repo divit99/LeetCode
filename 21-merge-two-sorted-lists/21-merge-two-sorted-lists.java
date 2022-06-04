@@ -22,7 +22,7 @@ class Solution {
         ListNode head=list1;
        while(list1!=null&&list2!=null){
            
-            ListNode itrator=list1;
+            ListNode itrator=null;
            
            while(list1!=null&&list1.val<=list2.val){
                itrator=list1;
