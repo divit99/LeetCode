@@ -30,17 +30,17 @@ class Solution {
                 result[i]  = stack.peek();
             stack.push(arr[i]);
         }
-        
-
-    int ans[]=new int[nums1.length];
-        for(int i=0;i<nums1.length;i++){
-            for(int j=0;j<arr.length;j++){
-                if(nums1[i]==arr[j]){
-                    ans[i]=result[j];
-                    break;
-                }
-            }
+        int ans[]=new int[nums1.length];
+     HashMap<Integer,Integer> hm = new HashMap<>();
+        for(int i=0;i<arr.length;i++){
+            hm.put(arr[i],result[i]);
         }
+        
+        for(int i=0;i<nums1.length;i++){
+           ans [i] = hm.get(nums1[i]);
+        }
+    
+     
         return ans;
     }
 }
