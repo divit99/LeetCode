@@ -14,11 +14,12 @@ class Solution {
         
         for(int i=index;i<nums.length;i++){
             
-            if(i>index&&nums[i]==nums[i-1])continue;
+            if(i==index||(i>index&&nums[i]!=nums[i-1]))
+            {
             curr.add(nums[i]);
             ans(i+1,nums,curr,res);
             curr.remove(curr.size()-1);
-            
+            }
         }
     }
 }
