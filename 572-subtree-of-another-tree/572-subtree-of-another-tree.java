@@ -17,17 +17,21 @@ class Solution {
     public boolean isSubtree(TreeNode root, TreeNode subRoot) {
         if(root==null)return false;
       
-        
+           if(root.val==subRoot.val){
+            
+             if(check(root,subRoot))
+              return true;
+        }
         boolean left= isSubtree(root.left,subRoot);
         boolean right= isSubtree(root.right,subRoot);
         boolean abc=false;
-        if(root.val==subRoot.val){
+//         if(root.val==subRoot.val){
             
-             abc=check(root,subRoot);
-            //System.out.println(abc);
-            //return abc;
-        }
-        return left||right||abc;
+//              abc=check(root,subRoot);
+//             //System.out.println(abc);
+//             //return abc;
+//         }
+        return left||right;
         
     }
     
